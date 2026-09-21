@@ -26,6 +26,7 @@ Checks:
 """
 import re
 import sys
+from pathlib import Path
 
 from course_paths import DOCS, INSTRUCTOR, ROOT
 
