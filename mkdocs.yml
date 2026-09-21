@@ -1,0 +1,207 @@
+# MkDocs configuration — Introduction to Computer (ICT)
+# Public pages only. The private instructor directory and docs-meta/ are
+# deliberately NOT under docs/ and never appear in nav.
+# Validated by scripts/validate_nav_sync.py — keep nav and docs/ tree in lock-step.
+
+site_name: Introduction to Computer (ICT)
+site_description: >-
+  A first-semester university course (32 lectures, 64 contact hours) covering computer
+  fundamentals, hardware, software, data representation, digital logic, productivity tools,
+  networks, cloud, databases, data science foundations, AI literacy, security, and society.
+site_author: Course Instructor
+site_url: https://nadeem-majeedch.github.io/Introduction-to-Computer-ICT-Course/
+
+repo_url: https://github.com/nadeem-majeedch/Introduction-to-Computer-ICT-Course
+repo_name: nadeem-majeedch/Introduction-to-Computer-ICT-Course
+edit_uri: edit/main/docs/
+
+copyright: '&copy; 2026 Course Instructor — content pending license decision (OQ-05)'
+
+theme:
+  name: material
+  language: en
+  features:
+    - navigation.tabs
+    - navigation.sections
+    - navigation.indexes
+    - navigation.top
+    - navigation.tracking
+    - navigation.path
+    - navigation.footer
+    - search.suggest
+    - search.highlight
+    - content.code.copy
+    - content.tabs.linked
+  palette:
+    # Auto mode respects the reader's OS preference; contrast pairs meet WCAG AA.
+    - media: "(prefers-color-scheme: light)"
+      scheme: default
+      primary: indigo
+      accent: indigo
+      toggle:
+        icon: material/weather-night
+        name: Switch to dark mode
+    - media: "(prefers-color-scheme: dark)"
+      scheme: slate
+      primary: indigo
+      accent: indigo
+      toggle:
+        icon: material/weather-sunny
+        name: Switch to light mode
+  icon:
+    logo: material/school
+
+extra_javascript:
+  - javascripts/mathjax.js
+  - https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-mml-chtml.js
+
+markdown_extensions:
+  - attr_list
+  - md_in_html
+  - admonition
+  - pymdownx.details
+  - pymdownx.superfences:
+      custom_fences:
+        - name: mermaid
+          class: mermaid
+          format: !!python/name:pymdownx.superfences.fence_code_format
+  - pymdownx.tabbed:
+      alternate_style: true
+  - pymdownx.arithmatex:
+      generic: true
+  - pymdownx.highlight:
+      anchor_linenums: true
+  - pymdownx.inlinehilite
+  - pymdownx.snippets
+  - pymdownx.critic
+  - pymdownx.keys
+  - pymdownx.mark
+  - pymdownx.tilde
+  - tables
+  - footnotes
+  - toc:
+      permalink: true
+  - def_list
+  - abbr
+
+plugins:
+  - search
+  - offline
+
+strict: true
+
+nav:
+  - Home: index.md
+  - Syllabus: syllabus.md
+  - Schedule: schedule.md
+  - Calendar: schedule-calendar.md
+  - Pathway: pathway.md
+  - Assessment: assessment.md
+  - Modules:
+      - modules/module-01-foundations.md
+      - modules/module-02-hardware.md
+      - modules/module-03-software-operating-systems.md
+      - modules/module-04-data-representation.md
+      - modules/module-05-logic-productivity.md
+      - modules/module-06-networks-internet-cloud.md
+      - modules/module-07-data-databases-ai.md
+      - modules/module-08-security-society-synthesis.md
+  - Lectures:
+      - 'L01 — What Is a Computer?': lectures/L01-what-is-a-computer.md
+      - 'L02 — A Brief History of Computing': lectures/L02-a-brief-history-of-computing.md
+      - 'L03 — Types of Computers and Their Applications': lectures/L03-types-of-computers.md
+      - 'L04 — Computers, Society, and You': lectures/L04-computers-society-and-you.md
+      - 'L05 — The von Neumann Architecture': lectures/L05-von-neumann-architecture.md
+      - 'L06 — The CPU: How Instructions Execute': lectures/L06-cpu-instruction-execution.md
+      - 'L07 — Memory and the Hierarchy': lectures/L07-memory-hierarchy.md
+      - 'L08 — Storage and Peripherals': lectures/L08-storage-and-peripherals.md
+      - 'L09 — The Software Landscape': lectures/L09-software-landscape.md
+      - 'L10 — Operating System Fundamentals': lectures/L10-operating-system-fundamentals.md
+      - 'L11 — File Systems and File Management': lectures/L11-file-systems-and-file-management.md
+      - 'L12 — Installing, Updating, and Troubleshooting': lectures/L12-installing-updating-troubleshooting.md
+      - 'L13 — Number Systems: Binary and Hexadecimal': lectures/L13-number-systems.md
+      - 'L14 — Representing Numbers in Hardware': lectures/L14-numbers-in-hardware.md
+      - 'L15 — Character Encoding': lectures/L15-character-encoding.md
+      - 'L16 — Multimedia and Compression': lectures/L16-multimedia-and-compression.md
+      - 'L17 — Boolean Logic and Truth Tables': lectures/L17-boolean-logic-truth-tables.md
+      - 'L18 — Logic Gates and Simple Circuits': lectures/L18-logic-gates-simple-circuits.md
+      - 'L19 — Productivity Tools I: Documents and Spreadsheets': lectures/L19-productivity-docs-spreadsheets.md
+      - 'L20 — Productivity Tools II: Presentations and Workflows': lectures/L20-productivity-presentations-workflows.md
+      - 'L21 — Computer Networking Concepts': lectures/L21-networking-concepts.md
+      - 'L22 — The Internet: How It Works': lectures/L22-internet-how-it-works.md
+      - 'L23 — The Web: HTTP, Browsers, and Search': lectures/L23-web-http-browsers-search.md
+      - 'L24 — Cloud Computing and Virtualization': lectures/L24-cloud-computing-virtualization.md
+      - 'L25 — Databases and Information Systems': lectures/L25-databases-information-systems.md
+      - 'L26 — Data Science Computing Foundations': lectures/L26-data-science-foundations.md
+      - 'L27 — Artificial Intelligence Fundamentals': lectures/L27-ai-fundamentals.md
+      - 'L28 — Responsible AI Literacy': lectures/L28-responsible-ai-literacy.md
+      - 'L29 — Cybersecurity Fundamentals': lectures/L29-cybersecurity-fundamentals.md
+      - 'L30 — Privacy and Digital Citizenship': lectures/L30-privacy-digital-citizenship.md
+      - 'L31 — Computational Thinking and Problem Solving': lectures/L31-computational-thinking.md
+      - 'L32 — Emerging Technologies and Course Synthesis': lectures/L32-emerging-technologies-synthesis.md
+  - Labs:
+      - labs/index.md
+      - 'Practical Lab Workbook': labs/workbook.md
+      - 'Lab 1 — Digital Basics and System Orientation': labs/lab-01-digital-basics-orientation.md
+      - 'Lab 2 — Hardware Inventory and Benchmarking': labs/lab-02-hardware-inventory-benchmarking.md
+      - 'Lab 3 — File System Scavenger Hunt': labs/lab-03-file-system-scavenger-hunt.md
+      - 'Lab 4 — Number Systems Workshop': labs/lab-04-number-systems-workshop.md
+      - 'Lab 5 — Logic Circuit Simulator Lab': labs/lab-05-logic-circuit-simulator.md
+      - 'Lab 6 — Spreadsheet Data Workshop': labs/lab-06-spreadsheet-data-workshop.md
+      - 'Lab 7 — Networking and Cloud Lab': labs/lab-07-networking-cloud-lab.md
+      - 'Lab 8 — Security Habits Lab': labs/lab-08-security-habits-lab.md
+      - 'SB-1 — Software Installation and Package Awareness': labs/sb-01-software-installation.md
+      - 'SB-2 — Database Thinking with Flat Tables': labs/sb-02-database-thinking.md
+      - 'SB-3 — Computational Thinking Gym': labs/sb-03-computational-thinking-gym.md
+      - 'SB-4 — Responsible AI Use Trial': labs/sb-04-responsible-ai.md
+  - Activities:
+      - activities/index.md
+      - 'A1 — History Timeline Jigsaw': activities/activity-1-history-timeline-jigsaw.md
+      - 'A2 — Number System Relay': activities/activity-2-number-system-relay.md
+      - 'A3 — Truth-Table Design Sprint': activities/activity-3-truth-table-design-sprint.md
+      - 'A4 — Anatomy of a Web Request': activities/activity-4-anatomy-of-a-web-request.md
+      - 'A5 — Phishing Red-Flag Audit': activities/activity-5-phishing-red-flag-audit.md
+  - Case Studies:
+      - case-studies/index.md
+      - 'CS-01 — Moore''s Law and the Smartphone': case-studies/case-study-01-moores-law-smartphone.md
+      - 'CS-02 — A University Moves to the Cloud': case-studies/case-study-02-university-cloud-migration.md
+      - 'CS-03 — Data-Driven Public Health Decisions': case-studies/case-study-03-data-driven-public-health.md
+      - 'CS-04 — Ransomware Incident at a Fictional College': case-studies/case-study-04-ransomware-response.md
+  - Problem Bank:
+      - case-bank/index.md
+      - 'Level 1 — Beginner': case-bank/level-1.md
+      - 'Level 2 — Intermediate': case-bank/level-2.md
+      - 'Level 3 — Advanced': case-bank/level-3.md
+      - 'Level 4 — Expert': case-bank/level-4.md
+  - Assessment Tools:
+      - assessments/index.md
+      - Question Bank:
+          - assessments/question-bank/index.md
+          - 'Modules 1–4': assessments/question-bank/qb-m01-m04.md
+          - 'Modules 5–8': assessments/question-bank/qb-m05-m08.md
+      - Exam Blueprints: assessments/exams/index.md
+      - Rubrics: assessments/rubrics.md
+      - Project:
+          - assessments/project/brief.md
+          - assessments/project/milestones.md
+          - assessments/project/rubric.md
+      - Practice Quizzes:
+          - assessments/quizzes/index.md
+          - 'Q01': assessments/quizzes/quiz-01.md
+          - 'Q02': assessments/quizzes/quiz-02.md
+          - 'Q03': assessments/quizzes/quiz-03.md
+          - 'Q04': assessments/quizzes/quiz-04.md
+          - 'Q05': assessments/quizzes/quiz-05.md
+          - 'Q06': assessments/quizzes/quiz-06.md
+          - 'Q07': assessments/quizzes/quiz-07.md
+          - 'Q08': assessments/quizzes/quiz-08.md
+          - 'Q09': assessments/quizzes/quiz-09.md
+          - 'Q10': assessments/quizzes/quiz-10.md
+          - 'Q11': assessments/quizzes/quiz-11.md
+          - 'Q12': assessments/quizzes/quiz-12.md
+          - 'Q13': assessments/quizzes/quiz-13.md
+          - 'Q14': assessments/quizzes/quiz-14.md
+  - References: references/index.md
+  - Glossary: glossary.md
+  - Help: help.md
+  - Accessibility: accessibility.md

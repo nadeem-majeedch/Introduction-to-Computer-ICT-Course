@@ -1,0 +1,21 @@
+# Virtual environments
+.venv/
+venv/
+
+# MkDocs build output
+site/
+
+# Python caches
+__pycache__/
+*.py[cod]
+
+# OS junk
+.DS_Store
+Thumbs.db
+
+# Local tooling metadata (not part of the course)
+.freebuff/
+
+# Editor droppings
+.vscode/
+.idea/

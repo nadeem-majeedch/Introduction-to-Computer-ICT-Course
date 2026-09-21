@@ -1,0 +1,58 @@
+# Semester calendar configuration — edit this file, then run:
+#   python scripts/generate_semester_calendar.py
+#
+# The generated page lands at docs/schedule-calendar.md (published on the site)
+# and a validation log goes to docs-meta/semester-calendar-log.md (internal).
+# All dates use ISO format (YYYY-MM-DD). Weekday numbering: Monday=0 … Sunday=6.
+
+# ── Instructor settings ────────────────────────────────────────────────────
+
+# First day of teaching for Week 1. The generator maps lectures to the
+# lecture_days below, skipping non-teaching days. Pick a date that falls on
+# (or before) one of your lecture days.
+semester_start: 2026-10-05        # a Monday — placeholder; CHANGE THIS
+
+# Weekdays on which lectures are held (0=Monday … 6=Sunday).
+lecture_days: [0, 2]              # Monday and Wednesday placeholder pattern
+
+# Total teaching sessions required (32 lectures by default).
+lecture_count: 32
+
+# Weeks without teaching (the generator skips these entirely and resumes
+# the schedule afterwards). List the WEEK NUMBERS as they will appear on
+# the calendar (Week 1 = the first teaching week).
+break_weeks: []                   # e.g. [8] for a mid-semester break week
+
+# Individual non-teaching days (holidays), ISO dates.
+holidays: []                      # e.g. ["2026-11-09"]
+
+# ── Assessment anchors (optional) ─────────────────────────────────────────
+#
+# Anchor assessment milestones to LECTURE NUMBERS rather than dates: the
+# generator computes their dates from the lecture mapping, so they follow
+# automatically if you shift the semester start.
+assessments:
+  - { milestone: "Project assigned (proposal released)", lecture: L08 }
+  - { milestone: "Milestone 1 — proposal due",            lecture: L16 }
+  - { milestone: "MIDTERM EXAMINATION (Modules 1–4)",     lecture: L16, session_offset: 1 }
+  - { milestone: "Milestone 2 — design document due",     lecture: L24 }
+  - { milestone: "Milestone 3 — working demo",            lecture: L28 }
+  - { milestone: "Final report + showcase preparation",   lecture: L31 }
+  - { milestone: "Project showcase (during L32)",         lecture: L32 }
+
+# ── Optional local overrides ───────────────────────────────────────────────
+#
+# session_overrides lets you pin a specific lecture to a specific date
+# (e.g., because a hall was rebooked): ["L07: 2026-11-11"].
+session_overrides: []
+
+# Status marking: sessions before this ISO date are rendered as
+# "planned" only if the date is in the future at generation time —
+# the generator marks sessions COMPLETED if their date is before
+# generated_on below, PLANNED otherwise. Set generated_on to "auto"
+# to use today's date at generation time.
+generated_on: auto
+
+# ── Output paths (rarely changed) ──────────────────────────────────────────
+output_page: docs/schedule-calendar.md
+output_log: docs-meta/semester-calendar-log.md

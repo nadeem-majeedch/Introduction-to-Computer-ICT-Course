@@ -1,0 +1,26 @@
+{
+  "course": "Introduction to Computer (ICT)",
+  "version": "1.0",
+  "expectations": {
+    "lectures": 32,
+    "modules": 8,
+    "labs": 8,
+    "lab_skill_builders": 4,
+    "activities": 5,
+    "case_studies": 4,
+    "case_bank_levels": 4,
+    "case_bank_cases": 100,
+    "practice_quizzes": 14,
+    "clos": 11,
+    "module_lecture_ranges": {
+      "1": [1, 4],
+      "2": [5, 8],
+      "3": [9, 12],
+      "4": [13, 16],
+      "5": [17, 20],
+      "6": [21, 24],
+      "7": [25, 28],
+      "8": [29, 32]
+    }
+  }
+}

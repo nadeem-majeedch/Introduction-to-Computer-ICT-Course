@@ -1,0 +1,36 @@
+name: CI
+
+on:
+  push:
+    branches:
+      - "**"
+  pull_request:
+
+jobs:
+  checks:
+    name: Content QA + strict build
+    runs-on: ubuntu-latest
+    steps:
+      - name: Check out repository
+        uses: actions/checkout@v4
+
+      - name: Set up Python
+        uses: actions/setup-python@v5
+        with:
+          python-version: "3.12"
+          cache: pip
+
+      - name: Install dependencies
+        run: pip install -r requirements.txt
+
+      - name: Regenerate semester calendar from semester.yml
+        run: python scripts/generate_semester_calendar.py
+
+      - name: Run structural validators
+        run: python scripts/run_all_checks.py
+
+      - name: Instructor-material exclusion guard
+        run: python scripts/check_instructor_exclusion.py
+
+      - name: Strict site build (warnings are errors)
+        run: mkdocs build --strict

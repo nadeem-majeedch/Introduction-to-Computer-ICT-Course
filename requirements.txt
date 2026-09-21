@@ -1,0 +1,5 @@
+# Verified 2026-09-18: local venv + CI build both green with these versions.
+# (mkdocs-material 9.x line; the project avoids the MkDocs 2.0 breaking release.)
+mkdocs==1.6.1
+mkdocs-material==9.7.7
+mkdocs-material-extensions==1.3.1
